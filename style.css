@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2e7d32;
+  --primary-dark: #1b5e20;
+  --accent: #4caf50;
+  --bg: #f4f7f5;
+  --card: #ffffff;
+  --text: #1e1e1e;
+  --muted: #666;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+
+h1, h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  padding: 14px 10px;
+
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  padding: 10px 16px;
+  border-radius: 12px;
+
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+
+  transition: all 0.25s ease;
+}
+
+nav a:hover {
+  background: white;
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+
+section,
+.about-section,
+.progress-section,
+.tasks {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 28px;
+
+  background: var(--card);
+  border-radius: 18px;
+
+  border: 1px solid #e6e6e6;
+  box-shadow: var(--shadow);
+
+  transition: 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+}
+
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.categories a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 120px;
+
+  border-radius: 16px;
+  text-decoration: none;
+
+  font-weight: 700;
+  color: var(--primary);
+
+  background: white;
+  border: 1px solid #e0e0e0;
+
+  box-shadow: var(--shadow);
+
+  transition: all 0.25s ease;
+}
+
+.categories a:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-8px) scale(1.03);
+}
+
+
+.tasks label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px;
+  margin: 12px 0;
+
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  background: #f9fbf9;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tasks label:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateX(6px);
+}
+
+.tasks input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: var(--primary);
+}
+
+
+button,
+.cta,
+.back-link a {
+  display: inline-block;
+
+  padding: 12px 22px;
+  border-radius: 14px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+
+  border: none;
+  box-shadow: var(--shadow);
+
+  transition: all 0.25s ease;
+}
+
+button:hover,
+.cta:hover,
+.back-link a:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 26px;
+  border-radius: 16px;
+
+  background: white;
+  border: 1px solid #eee;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+
+.developers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.developers div {
+  padding: 18px;
+  border-radius: 14px;
+
+  background: #f1f8e9;
+  border: 1px solid #dfeadf;
+
+  text-align: center;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.developers div:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+
+.badge img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  border: 3px solid var(--primary);
+  box-shadow: var(--shadow);
+}
+
+
+.eco-tip {
+  margin-top: 20px;
+  padding: 16px;
+
+  border-radius: 14px;
+  background: #f1f8e9;
+
+  border-left: 6px solid var(--primary);
+
+  font-style: italic;
+  color: var(--muted);
+}
+
+
+footer {
+  text-align: center;
+  padding: 18px;
+
+  background: #3e2723;
+  color: white;
+
+  margin-top: 40px;
+}
+
+
+section,
+.card,
+.categories a,
+.developers div {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
